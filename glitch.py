@@ -6,8 +6,8 @@ def rollrep(arr, shift_horizontal = 0, shift_vertical = 0):
   dimensions = np.shape(arr)
   rows, columns = dimensions
 
-  # shift_horizontal = shift_rows --> AXIS 0
-  # shift_vertical = shift_columns --> AXIS 1
+  # shift_horizontal = shift rows --> AXIS 0
+  # shift_vertical = shift columns --> AXIS 1
 
   # determine which axis to shift and how much to shift
   # In a two-dimensional vector, the elements of axis 0 are rows and the elements of axis 1 are columns
@@ -23,9 +23,7 @@ def rollrep(arr, shift_horizontal = 0, shift_vertical = 0):
   else:
     print("no shift specified.")
 
-  # determine input vector for 
-  
-  # roll array
+  # determine input vector for roll array
   arr = np.roll(arr,axis=dir_axis, shift=n_shift)
 
   # add zeros
@@ -55,7 +53,6 @@ def rollrep(arr, shift_horizontal = 0, shift_vertical = 0):
       start_r = rows - shift_horizontal
       arr[start_r:rows+1,0:start_c:rows+1] = 0
     
-    #
   else:
     print("dir_axis paramter incorrect.")
 
